@@ -60,6 +60,12 @@ public class Main {
          Main mainObj = new Main();
         mainObj.greenMethod();
         mainObj.blueMethod();// false (not cached)
+        if (a == b) {
+            System.out.println("Condition is true");
+        } else {
+            System.out.println("Condition is false");
+            
+        }
     }
 
     // Adding new methods outside main
