@@ -57,8 +57,11 @@ public class Main {
         Integer m = 200;
         Integer n = 300;
         System.out.println("Using == with Integer: " + (m == n)); // false (not cached)
-        System.out.println("Using .equals() with Integer: " + m.equals(n)); //
+    }
 
+    // Adding new methods outside main
+    void greenMethod(){
+        System.out.println("This is a green method");
     }
 
     void blueMethod(){
