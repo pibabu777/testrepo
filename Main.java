@@ -46,6 +46,7 @@ public class Main {
         } else {
             System.out.println("Integers are not equal");
         }
+        // Removed redundant else block that caused syntax error
         
         Integer x = 100;
         Integer y = 100;
@@ -54,6 +55,9 @@ public class Main {
         System.out.println("Using .equals() with Integer: " + x.equals(y)); // true
 
         Integer m = 200;
+        Integer n = 300;
+        System.out.println("Using == with Integer: " + (m == n)); // false (not cached)
+        System.out.println("Using .equals() with Integer: " + m.equals(n)); //
 
     }
 
