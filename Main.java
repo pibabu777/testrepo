@@ -56,7 +56,10 @@ public class Main {
 
         Integer m = 200;
         Integer n = 300;
-        System.out.println("Using == with Integer: " + (m == n)); // false (not cached)
+        System.out.println("Using == with Integer: " + (m == n)); 
+         Main mainObj = new Main();
+        mainObj.greenMethod();
+        mainObj.blueMethod();// false (not cached)
     }
 
     // Adding new methods outside main
