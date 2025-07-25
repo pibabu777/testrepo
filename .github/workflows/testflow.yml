@@ -1,4 +1,4 @@
-name: Python CI
+name: Java CI with Maven
 
 on:
   push:
@@ -8,25 +8,26 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up Python
-      uses: actions/setup-python@v4
+    - name: Set up JDK 17
+      uses: actions/setup-java@v3
       with:
-        python-version: '3.10'  # You can change this to your preferred version
+        java-version: '17'
+        distribution: 'temurin'
 
-   
-    - name: Install dependencies
-      run: |
-        python -m pip install --upgrade pip
-        pip install requests pandas numpy  # Add your packages here
+    - name: Cache Maven packages
+      uses: actions/cache@v3
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
+        restore-keys: |
+          ${{ runner.os }}-maven-
 
-
-
-    - name: Run your script or tests
-      run: |
-        python your_script.py  # Replace with your actual script or test command
+    - name: Build with Maven
+      run: mvn -B package --file pom.xml
