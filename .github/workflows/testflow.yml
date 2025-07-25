@@ -1,4 +1,4 @@
-name: Java CI with Maven
+name: Java CI (No Maven)
 
 on:
   push:
@@ -8,26 +8,20 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
     - name: Checkout code
       uses: actions/checkout@v3
 
-    - name: Set up JDK 17
+    - name: Set up JDK
       uses: actions/setup-java@v3
       with:
-        java-version: '17'
+        java-version: '17'  # Change to your required version
         distribution: 'temurin'
 
-    - name: Cache Maven packages
-      uses: actions/cache@v3
-      with:
-        path: ~/.m2
-        key: ${{ runner.os }}-maven-${{ hashFiles('**/pom.xml') }}
-        restore-keys: |
-          ${{ runner.os }}-maven-
+    - name: Compile Java files
+      run: javac -d out $(find . -name "*.java")
 
-    - name: Build with Maven
-      run: mvn -B package --file pom.xml
+    - name: Run Java program
+      run: java -cp out Main  # Replace 'Main' with your main class name
