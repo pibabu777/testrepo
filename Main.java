@@ -21,7 +21,7 @@ public class Main {
         Car myCar = new Car(); // myCar is an object
         myCar.color = "Red";
         myCar.drive();
-        System.out.println("Car has driven. Color: " + myCar.color);
+        System.out.println("Car has driven. Color1: " + myCar.color);
         LocalDateTime currentDateTime = LocalDateTime.now();
 
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd hh:mm:ss");
