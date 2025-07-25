@@ -19,7 +19,7 @@ class Car {
 public class Main {
     public static void main(String[] args) {
         Car myCar = new Car(); // myCar is an object
-        myCar.color = "Red";
+        myCar.color = "Red1";
         myCar.drive();
         System.out.println("Car has driven. Color: " + myCar.color);
         LocalDateTime currentDateTime = LocalDateTime.now();
@@ -39,7 +39,7 @@ public class Main {
             System.out.println("Strings are equal");
         } 
         else {
-            System.out.println("Strings are not equal");
+            System.out.println("Strings are not equal12");
         }
         if(a.equals(b)) {
             System.out.println("Integers are equal");
