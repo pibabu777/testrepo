@@ -70,7 +70,7 @@ public class Main {
 
     // Adding new methods outside main
     void greenMethod(){
-        System.out.println("This is a green method");
+        System.out.println("This is a green method12");
     }
 
     void blueMethod(){
