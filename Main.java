@@ -66,8 +66,26 @@ public class Main {
             System.out.println("Condition is false");
             
         }
-    }
 
+
+            int [] arr = {12, 34, 56, 78, 90};
+            int target = 56;
+            for (int i = 0; i < arr.length; i++) {
+             if(arr[i] == target) {
+            System.out.println("Element found at index: " + i);
+            break;
+             }}
+
+             
+        // int[] arr = {12, 34, 56, 78, 90};
+        // int target = 56;
+
+        // for (int i = 0; i < arr.length; i++) {
+        //     if (arr[i] == target) {
+        //         System.out.println("Element found at index: " + i);
+        //         break;
+        //     }}
+    }
     // Adding new methods outside main
     void greenMethod(){
         System.out.println("This is a green method12");
