@@ -26,7 +26,7 @@ jobs:
     - name: Run Java program
       run: java -cp out Main  # Replace 'Main' with your main class name
     
-- name: Checkout code
+    - name: Checkout code
       uses: actions/checkout@v3
 
     - name: Set up Docker Buildx
