@@ -37,4 +37,6 @@ jobs:
 
     - name: Run Docker container
       run: docker run java-app
+    - name: Test file
+      run: docker run Main.java
 
