@@ -1,19 +1,34 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
-- main
+  branches:
+    include:
+      - main
+      
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+  - script: |
+      echo "Checking Java version..."
+      java -version
+    displayName: 'Verify Java Installation'
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+  - script: |
+      mkdir -p out
+      javac -d out $(find . -name "*.java")
+    displayName: 'Compile Java files'
+
+  - script: |
+      java -cp out Main  # Replace 'Main' with your actual main class name
+    displayName: 'Run Java program'
+
+  - task: DockerInstaller@0
+    displayName: 'Install Docker'
+
+  - script: |
+      docker build -t java-app .
+    displayName: 'Build Docker image'
+
+  - script: |
+      docker run java-app
+    displayName: 'Run Docker container'
