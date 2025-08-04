@@ -189,7 +189,6 @@ Map<Boolean, List<User>> partitioned = users.stream()
             .collect(Collectors.partitioningBy(user -> user.age > 18));
 
            List<String> resultList  = users.stream().map(toUpperCase -> toUpperCase.getName()).collect(Collectors.toList());
-
             
 
         System.out.println("Adults (>18): " + partitioned.get(true) + "names:" + names);
@@ -205,7 +204,7 @@ Map<Boolean, List<User>> partitioned = users.stream()
             .map(String::toUpperCase) // Convert each fruit name to uppercase
             .collect(Collectors.toList());
 
-            System.out.println("Uppercase Fruits: " + uppercaseFruits);
+            System.out.println("Uppercase Fruits with names: " + uppercaseFruits);
         //List<String> uppercase = fruits.stream().map(fruits::uppercase).collect(Collectors.toList());
 
 
