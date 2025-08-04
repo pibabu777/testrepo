@@ -1,10 +1,14 @@
 name: Java CI (No Maven)1
 
-on:
-  push:
+on:  
+ push:
     branches: [ main ]
-  pull_request:
+    paths:
+      - 'src/Main.java'  
+ pull_request:
     branches: [ main ]
+    paths:
+      - 'src/Main.java'
 
 jobs:
   build:
@@ -38,4 +42,4 @@ jobs:
     - name: Run Docker container
       run: docker run java-app
 
-
+ 
