@@ -1,0 +1,34 @@
+trigger:
+  branches:
+    include:
+      - main
+      
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+  - script: |
+      echo "Checking Java version..."
+      java -version
+    displayName: 'Verify Java Installation'
+
+  - script: |
+      mkdir -p out
+      javac -d out $(find . -name "*.java")
+    displayName: 'Compile Java files'
+
+  - script: |
+      java -cp out Main  # Replace 'Main' with your actual main class name
+    displayName: 'Run Java program'
+
+  - task: DockerInstaller@0
+    displayName: 'Install Docker'
+
+  - script: |
+      docker build -t java-app .
+    displayName: 'Build Docker image'
+
+  - script: |
+      docker run java-app
+    displayName: 'Run Docker container'

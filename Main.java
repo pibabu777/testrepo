@@ -77,10 +77,14 @@ public class Main {
         Bike myBike = new Bike(); // myBike is an object of the subclass bike
         myCar.color = "Red1";
         myCar.drive();
+
         myBike.drive();
         myBike.color = "Blue";
         System.out.println("Car has driven. Color: " + myCar.color);
         System.out.println("Bike has driven. Color: " + myBike.maxSpeed);
+
+        System.out.println("Car has driven. Color1: " + myCar.color);
+
         LocalDateTime currentDateTime = LocalDateTime.now();
 
 
