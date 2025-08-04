@@ -15,6 +15,36 @@ import java.util.stream.Collectors;
 
 
 
+class Animal {
+
+    void sound() {
+        System.out.println("Animal makes a sound");
+    }
+}
+
+class Dog extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Dog barks");
+    }
+}
+
+class Cat extends Animal {
+    @Override
+    void sound() {
+        System.out.println("Cat meows");
+    }
+}
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -28,13 +58,41 @@ class Car {
     }
 }
 
+class Bike extends Car{
+      int maxSpeed;
+   
+    Bike() {
+      
+        maxSpeed = 50;
+        System.out.println("Bike max speed: " + maxSpeed);
+    }
+   
+}
+
+
+
 public class Main {
     public static void main(String[] args) {
         Car myCar = new Car(); // myCar is an object
+        Bike myBike = new Bike(); // myBike is an object of the subclass bike
         myCar.color = "Red1";
         myCar.drive();
+        myBike.drive();
+        myBike.color = "Blue";
         System.out.println("Car has driven. Color: " + myCar.color);
+        System.out.println("Bike has driven. Color: " + myBike.maxSpeed);
         LocalDateTime currentDateTime = LocalDateTime.now();
+
+
+        Animal a12;
+a12 = new Dog();
+a12.sound();  // Output: Dog barks
+
+a12 = new Cat();
+a12.sound();  // Output: Cat meows
+System.out.println("Animal sound: " + a12.getClass());
+
+
 
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-mm-dd hh:mm:ss");
 
@@ -134,7 +192,7 @@ Map<Boolean, List<User>> partitioned = users.stream()
         System.out.println("Minors (<=18): " + partitioned.get(false));
 
         System.out.println("Partitioned Users: " + partitioned + "names: " + names);
-        System.out.println("Uppercase Names: " + resultList);
+        System.out.println("Uppercase Names with intials: " + resultList);
 
         
 
