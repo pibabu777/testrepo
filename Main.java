@@ -131,7 +131,7 @@ System.out.println("Animal sound: " + a12.getClass());
 
         Integer m = 200;
         Integer n = 300;
-        System.out.println("Using == with Integer: " + (m == n)); 
+        System.out.println("Using == with Integer12: " + (m == n)); 
          Main mainObj = new Main();
         mainObj.greenMethod();
         mainObj.blueMethod();// false (not cached)
