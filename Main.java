@@ -260,16 +260,12 @@ Map<Boolean, List<User>> partitioned = users.stream()
             a1 = b1;
             b1 = next;
         }
+        System.out.println("\nFibonacci series up to " + n1 + " terms printed.");
+
+        // Uncomment the following lines to test the string manipulation functionality
+        // This code checks if two strings are equal and prints a message accordingly.
 
 
-        
-try {
-            int result = 10 / 0; // throws ArithmeticException
-        } catch (ArithmeticException e) {
-            System.out.println("Exception caught: " + e);
-        } finally {
-            System.out.println("This block always executes");
-        }
 
 
         
