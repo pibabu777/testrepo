@@ -6,10 +6,12 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 import java.util.Objects;
+import java.util.TreeMap;
 import java.util.stream.Collectors;
 
 
@@ -131,7 +133,7 @@ System.out.println("Animal sound: " + a12.getClass());
 
         Integer m = 200;
         Integer n = 300;
-        System.out.println("Using == with Integer: " + (m == n)); 
+        System.out.println("Using == with Integer12: " + (m == n)); 
          Main mainObj = new Main();
         mainObj.greenMethod();
         mainObj.blueMethod();// false (not cached)
@@ -151,7 +153,7 @@ System.out.println("Animal sound: " + a12.getClass());
             break;
              }}
              List <String> list = new ArrayList<>();
-             list.add("Sunil");
+             list.add("Sunil babu");
              list.add("Ravi");
               System.out.println("List elements: " + list);  
              list.remove(0);
@@ -198,6 +200,44 @@ Map<Boolean, List<User>> partitioned = users.stream()
         System.out.println("Partitioned Users: " + partitioned + "names: " + names);
         System.out.println("Uppercase Names with intials: " + resultList);
 
+
+        List<String> demolist = Arrays.asList("Jvaa" ,null , "  ", "python" , " c++" );
+
+        Map<String, Integer> testmap = demolist.stream()
+            .filter(Objects::nonNull)
+            .filter(empty -> !empty.trim().isBlank())
+            .collect(Collectors.toMap(String::toUpperCase, String::length));
+        
+
+            System.out.println("Filtered Map: " + testmap);
+
+            
+        List<String> linkedListnew = new LinkedList<>();
+        linkedListnew.add("Car");
+        linkedListnew.add("Bike");
+        linkedListnew.add("Car");
+
+     
+      
+
+
+
+
+ Map<String, Integer> hashMap = new HashMap<>();
+        hashMap.put("A", 1);
+        hashMap.put("B", 2);
+        hashMap.put("A", 3); // replaces value for key "A"
+
+        Map<String, Integer> treeMap = new TreeMap<>();
+        treeMap.put("C", 3);
+        treeMap.put("A", 1);
+        treeMap.put("B", 2);
+
+        System.out.println("HashMap: " + hashMap);
+        System.out.println("TreeMap (Sorted): " + treeMap);
+
+
+       
         
 
         List<String> fruits = Arrays.asList("apple", "banana", "cherry");
@@ -219,6 +259,16 @@ Map<Boolean, List<User>> partitioned = users.stream()
             int next = a1 + b1;
             a1 = b1;
             b1 = next;
+        }
+
+
+        
+try {
+            int result = 10 / 0; // throws ArithmeticException
+        } catch (ArithmeticException e) {
+            System.out.println("Exception caught: " + e);
+        } finally {
+            System.out.println("This block always executes");
         }
 
 
