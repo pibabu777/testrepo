@@ -262,14 +262,6 @@ Map<Boolean, List<User>> partitioned = users.stream()
         }
 
 
-        
-try {
-            int result = 10 / 0; // throws ArithmeticException
-        } catch (ArithmeticException e) {
-            System.out.println("Exception caught: " + e);
-        } finally {
-            System.out.println("This block always executes");
-        }
 
 
         
