@@ -1,7 +1,4 @@
 
-
-  
-
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
@@ -179,13 +176,16 @@ names1.forEach(ver ->  System.out.println(ver));
         linkedList.forEach(bro -> System.out.println(bro));
 
        
-        List<User> users = Arrays.asList(
+       List<User> users = Arrays.asList(
             new User(1, "Sunil", 30),
             new User(2, "Ravi", 25),
             new User(3, "Kiran", 28) ,  
             new User(4, "Vamsi", 17 ),
             new User(5, "Babu", 14)
         );
+
+        List<Integer , String> testuser =Array.asList("pop" , "pop1", "pop2");
+        System.out.println("Test User: " + testuser);
 
        
 Map<Boolean, List<User>> partitioned = users.stream()
