@@ -184,6 +184,9 @@ names1.forEach(ver ->  System.out.println(ver));
             new User(5, "Babu", 14)
         );
 
+        List<Integer , String> testuser =Array.asList("pop" , "pop1", "pop2");
+        System.out.println("Test User: " + testuser);
+
        
 Map<Boolean, List<User>> partitioned = users.stream()
             .collect(Collectors.partitioningBy(user -> user.age > 18));
